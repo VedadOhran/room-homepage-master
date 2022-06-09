@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'League Spartan', sans-serif;
+}
+
+/*BODY*/
+
+body{
+  overflow-x: hidden;
+  
+}
+
+body:after{
+  content: '';
+ display: block;
+ position: fixed;
+ top: 4rem; bottom: 0; left: 0; right: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 10;
+ background-color: rgba(0,0,0,0.0);
+ visibility:hidden;
+ transition: background-color 1s;
+}
+
+body.menu-open:after{
+   background-color: rgba(0,0,0,0.8);
+   visibility: visible;
+   opacity: 0.4;
+}
+
+
+/*NAVBAR*/
+
+.top-page{
+  display: flex;
+    height: 60vh;
+} 
+
+.img-slider img{
+ width: 100%;
+ height:100%;
+ display: none;
+ object-fit: cover;
+
+}
+
+.img-slider img:first-child{
+  display: block;
+}
+
+.navbar{
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2rem;
+}
+
+.navbar img{
+  width: 70px;
+}
+.navbar ul{
+  display: flex;
+  list-style: none;
+  margin-left: 2rem;
+}
+
+.navbar li{
+margin-left: 2rem;
+display: inline-block;
+padding-bottom: 2px;
+background: linear-gradient(#fff,#fff) center bottom;
+background-size: 0 2px;
+background-repeat:no-repeat ;
+transition: all 0.45s;
+}
+
+.navbar li:hover{
+  background-size: 100% 2px;
+}
+
+.navbar a{
+ color: #fff;
+ text-decoration: none;
+ font-size: 1.3rem;
+}
+
+.toggle-nav{
+  display: none;
+  cursor: pointer;
+  position:absolute;
+  top: 0;
+  border: 0;
+  background: transparent;
+  padding: 2px;
+  color: #333;
+  font-size: 2rem;
+}
+
+.toggle-nav:focus{
+  outline: none;
+}
+
+
+
+/*SHOP NOW*/
+
+.top-right{
+display: flex;
+margin: auto;
+}
+
+.right-text h1{
+  color:hsl(0, 0%, 27%);
+  font-size: 2.5rem;
+}
+
+.right-text p{
+  margin-top: 1rem; 
+  color:hsl(0, 0%, 63%);
+  font-size: 1.2rem;
+}
+
+.right-text h3{
+  margin-top: 1rem;
+  color:hsl(0, 0%, 63%);  
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  cursor: pointer;
+}
+
+.right-text h3:hover{
+  color: hsl(0, 0%, 27%);
+}
+
+.text-slider{
+  display: none;
+}
+
+.text-slider:first-child{
+  display: block;
+}
+
+.top-btn{
+display: flex;
+margin-top: auto;
+}
+
+
+.top-btn button{
+  background-color: hsl(0, 0%, 27%);
+  width: 4.5vw;
+  height: 4.5vw;
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  border: 0;
+  transition: 0.2s ease;
+}
+
+.top-btn button:hover{
+  cursor: pointer;
+  background-color: hsl(0, 0%, 63%);
+}
+
+
+
+/*BOTTOM PAGE*/
+.bottom-page{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about{
+  align-self: center;
+}
+
+.bottom-page img{
+width: 100%;
+height: 100%;
+min-height:273px;
+}
+
+.about-text h2{
+  text-transform: uppercase;
+  color:hsl(0, 0%, 27%);
+  font-size: 1.2rem;
+  
+}
+
+.about-text p{
+  color:hsl(0, 0%, 63%);
+  font-size: 1rem;
+}
+
+
+
+
+
+
+
+@media(max-width:900px){
+/*NAVBAR*/
+  .top-page{
+    display: flex;
+    height: auto;
+    flex-direction: column;
+  } 
+
+  .navbar{
+    margin: 0;
+    display: none;
+  }
+
+  .navbar.show{
+    display: flex;
+    background-color: #fff;
+    width: 100%;
+    height: 4rem;
+    align-items: center;
+  }
+  
+  .navbar a{
+    color: #333;
+    font-size: 1rem;
+  }
+
+.navbar img{
+  display: none;
+}
+
+.toggle-nav{
+  display: block;
+  z-index: 1;
+  margin: 10px;
+  color: #fff;
+}
+
+.toggle-nav.active{
+ color:hsl(0, 0%, 27%);
+}
+
+
+
+/*SHOP NOW*/
+  .top-right{
+    margin: 2rem;
+  }
+
+  .top-btn{
+    margin-left: auto ;
+  }
+  
+ .top-btn button{
+   width: 3rem;
+   height: 3rem;
+ }
+
+
+/*BOTTOM PAGE*/
+
+  .bottom-page{
+    flex-direction: column;
+    align-items: stretch;
+    margin: 1rem;
+    text-align: center;
+  }
+
+  .about-text p{
+    font-size: 1rem;
+  }
+
+}
